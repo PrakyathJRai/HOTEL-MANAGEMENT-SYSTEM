@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Availability</title>
+</head>
+
+<body>
+
+<h1>Add Availability</h1>
+
+<form method="post">
+
+{% csrf_token %}
+
+{{ form.as_p }}
+
+<button>
+
+Save Slot
+
+</button>
+
+</form>
+
+<hr>
+
+<h2>Your Slots</h2>
+
+{% for slot in slots %}
+
+<p>
+
+{{ slot.date }}
+
+{{ slot.start_time }}
+
+-
+
+{{ slot.end_time }}
+
+</p>
+
+{% empty %}
+
+<p>No slots added.</p>
+
+{% endfor %}
+
+</body>
+
+</html>

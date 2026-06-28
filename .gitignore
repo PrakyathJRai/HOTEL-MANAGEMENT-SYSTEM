@@ -1,0 +1,23 @@
+# Google OAuth
+credentials.json
+
+# Environment files
+.env
+.env.local
+
+# Python
+__pycache__/
+*.pyc
+venv/
+
+# VS Code
+.vscode/
+
+# Node.js
+node_modules/
+email-service/node_modules/
+
+# Logs
+*.log
+
+db.sqlite3

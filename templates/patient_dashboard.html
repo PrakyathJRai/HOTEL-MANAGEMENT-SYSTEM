@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Dashboard</title>
+</head>
+<body>
+
+<h1>Available Doctor Slots</h1>
+
+{% for slot in slots %}
+
+<div style="border:1px solid black;padding:15px;margin:10px;">
+
+<p>
+Doctor:
+{{ slot.doctor.username }}
+</p>
+
+<p>
+Date:
+{{ slot.date }}
+</p>
+
+<p>
+Time:
+{{ slot.start_time }} - {{ slot.end_time }}
+</p>
+
+<a href="{% url 'book_slot' slot.id %}">
+<button>
+Book Appointment
+</button>
+</a>
+
+</div>
+
+{% empty %}
+
+<h3>No Slots Available</h3>
+
+{% endfor %}
+
+</body>
+</html>
